@@ -16,6 +16,10 @@ public class CustomerService {
     createCustomersTableIfNotExists();
   }
 
+  /**
+   * Insert new Customer record into the DDBB
+   * @param customer
+   */
   public void createCustomer(Customer customer) {
     try (Connection conn = this.connectionProvider.getConnection()) {
       PreparedStatement pstmt = conn.prepareStatement(
@@ -29,6 +33,10 @@ public class CustomerService {
     }
   }
 
+  /**
+   *
+   * @return All customers stored in the DDBB
+   */
   public List<Customer> getAllCustomers() {
     List<Customer> customers = new ArrayList<>();
 

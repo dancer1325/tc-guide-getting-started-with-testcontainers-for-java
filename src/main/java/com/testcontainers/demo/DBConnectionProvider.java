@@ -15,6 +15,10 @@ class DBConnectionProvider {
     this.password = password;
   }
 
+  /**
+   *
+   * @return  Database Connection using JDBC API
+   */
   Connection getConnection() {
     try {
       return DriverManager.getConnection(url, username, password);
